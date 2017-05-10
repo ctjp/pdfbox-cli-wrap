@@ -1,3 +1,5 @@
+"use strict";
+
 //const Document = require('node-pdfbox');
 const path = require('path')
 //const ack = require('ack-host/ack-node')
