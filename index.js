@@ -9,6 +9,7 @@ const ackPdfBoxJarPath = path.join(ackPdfBoxPath, "../", "dist","ackpdfbox-1.0-S
 //const ackPdfBoxJarPath = path.join(__dirname, "ackpdfbox-1.0-SNAPSHOT-jar-with-dependencies.jar")
 //const pdfBoxJarPath = path.join(__dirname,"ackpdfbox-1.0-SNAPSHOT-jar-with-dependencies.jar")
 const fs = require('fs')
+const os = require('os')
 
 function opsOntoSpawnArgs(options, sArgs){
   for(let name in options){
@@ -586,7 +587,8 @@ function getTempFileName(ext, prefix){
 }
 
 function getTempFilePath(ext, prefix){
-  return path.join(process.cwd(), getTempFileName(ext, prefix)) 
+  console.log('getTempFilePath', os.tmpdir());
+  return path.join(os.tmpdir(), getTempFileName(ext, prefix)) 
 }
 
 const base64ImgDef = 'data:image/'
